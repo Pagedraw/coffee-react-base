@@ -47,7 +47,7 @@ ErrorOverlay.startReportingRuntimeErrors({
   onError: function() {
     hadRuntimeError = true;
   },
-  filename: '/static/js/bundle.js',
+  filename: '/script.js',
 });
 
 if (module.hot && typeof module.hot.dispose === 'function') {
@@ -57,12 +57,14 @@ if (module.hot && typeof module.hot.dispose === 'function') {
   });
 }
 
+var server_url = url.parse(process.env.PUBLIC_URL);
+
 // Connect to WebpackDevServer via a socket.
 var connection = new SockJS(
   url.format({
-    protocol: window.location.protocol,
-    hostname: window.location.hostname,
-    port: window.location.port,
+    protocol: server_url.protocol,
+    hostname: server_url.hostname,
+    port: server_url.port,
     // Hardcoded in WebpackDevServer
     pathname: '/sockjs-node',
   })

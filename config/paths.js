@@ -49,8 +49,11 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
-  publicUrl: getPublicUrl(resolveApp('package.json')),
-  servedPath: getServedPath(resolveApp('package.json')),
+
+  // FIXME this is not great, because we have to configure the prod static server from inside the code,
+  // rather than let that be parametrizable
+  publicUrl: require(resolveApp('package.json')).prodStaticServer,
+  servedPath: require(resolveApp('package.json')).prodStaticServer,
 
   webpackEntryPoints: require(resolveApp('package.json')).webpackEntryPoints,
   devWebpackEntryPoints: require(resolveApp('package.json')).devWebpackEntryPoints,

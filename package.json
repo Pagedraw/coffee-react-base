@@ -58,6 +58,7 @@
   "devWebpackEntryPoints": {
     "demos": "./src/demos.js"
   },
+  "prodStaticServer": "http://localhost:5002/",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
