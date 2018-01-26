@@ -44,7 +44,6 @@ module.exports = {
   appBuild: resolveApp('dist'),
   appPublic: resolveApp('static'),
   appHtml: resolveApp('static/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
@@ -52,4 +51,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+
+  webpackEntryPoints: require(resolveApp('package.json')).webpackEntryPoints,
+  devWebpackEntryPoints: require(resolveApp('package.json')).devWebpackEntryPoints,
 };
