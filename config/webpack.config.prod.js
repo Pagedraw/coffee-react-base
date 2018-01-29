@@ -147,12 +147,8 @@ module.exports = {
           },
 
           {
-            test: /\.cjsx$/,
-            use: ['coffee-loader', 'cjsx-loader']
-          },
-          {
-            test: /\.coffee$/,
-            use: [ 'coffee-loader' ]
+            test: /\.(coffee|cjsx)$/,
+            use: ['babel-loader', 'coffee-loader']
           },
 
           // Process JS with Babel.

@@ -147,13 +147,10 @@ return {
 
 
           {
-            test: /\.cjsx$/,
-            use: ['coffee-loader', 'cjsx-loader']
+            test: /\.(coffee|cjsx)$/,
+            use: ['babel-loader', 'coffee-loader']
           },
-          {
-            test: /\.coffee$/,
-            use: [ 'coffee-loader' ]
-          },
+
 
           // Process JS with Babel.
           {
