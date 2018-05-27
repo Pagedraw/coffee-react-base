@@ -1,3 +1,7 @@
+STATUS: BROKEN
+
+We still haven't gotten this working with CoffeeScript2, the await keyword, and production builds.
+
 # Pagedraw's internal React-Coffee-Webpack build system
 
 We want to be as close to create-react-app as possible.  We hope that by being standardized, we can easily pull in new things in the React ecosystem, especially if they're added to create-react-app.  The Pagedraw app itself isn't too far from standard React, so we have no reason to deviate too far.
